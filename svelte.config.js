@@ -1,7 +1,8 @@
 // import adapter from '@sveltejs/adapter-vercel';
 // import adapter from '@sveltejs/adapter-cloudflare';
+// import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import adapter from '@sveltejs/adapter-node';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,7 +10,9 @@ const config = {
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			fallback: null
+		})
 	},
 	compilerOptions: {
 		runes: true
