@@ -11,7 +11,7 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
-			fallback: null
+			fallback: 'index.html'
 		})
 	},
 	compilerOptions: {
